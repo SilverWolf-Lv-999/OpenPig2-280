@@ -1,0 +1,362 @@
+{
+  "mappings": {
+    "kakiku/pig2mod/mixin/MxChunkMap$TrackedEntity": {
+      "net.minecraft.server.level.ChunkMap$TrackedEntity": "net/minecraft/server/level/ChunkMap$TrackedEntity"
+    },
+    "kakiku/pig2mod/mixin/MxMinecraftServer": {
+      "stopServer": "Lnet/minecraft/server/MinecraftServer;m_7041_()V",
+      "createLevels": "Lnet/minecraft/server/MinecraftServer;m_129815_(Lnet/minecraft/server/level/progress/ChunkProgressListener;)V"
+    },
+    "kakiku/pig2mod/mixin/MxPersistentEntitySectionManager": {
+      "stopTracking": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157580_(Lnet/minecraft/world/level/entity/EntityAccess;)V",
+      "stopTicking": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157570_(Lnet/minecraft/world/level/entity/EntityAccess;)V",
+      "unloadEntity": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157585_(Lnet/minecraft/world/level/entity/EntityAccess;)V",
+      "processChunkUnload": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157568_(J)Z",
+      "updateChunkStatus(Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/level/entity/Visibility;)V": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157527_(Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/level/entity/Visibility;)V"
+    },
+    "kakiku/pig2mod/mixin/MxServerLevel": {
+      "addEntity": "Lnet/minecraft/server/level/ServerLevel;m_8872_(Lnet/minecraft/world/entity/Entity;)Z",
+      "tickNonPassenger": "Lnet/minecraft/server/level/ServerLevel;m_8647_(Lnet/minecraft/world/entity/Entity;)V",
+      "broadcastEntityEvent": "Lnet/minecraft/server/level/ServerLevel;m_7605_(Lnet/minecraft/world/entity/Entity;B)V",
+      "tick": "Lnet/minecraft/server/level/ServerLevel;m_8793_(Ljava/util/function/BooleanSupplier;)V",
+      "setChunkForced": "Lnet/minecraft/server/level/ServerLevel;m_8602_(IIZ)Z",
+      "Lnet/minecraft/world/entity/Entity;tick()V": "Lnet/minecraft/world/entity/Entity;m_8119_()V"
+    },
+    "kakiku/pig2mod/mixin/MxPersistentEntitySectionManager$Callback": {
+      "net.minecraft.world.level.entity.PersistentEntitySectionManager$Callback": "net/minecraft/world/level/entity/PersistentEntitySectionManager$Callback"
+    },
+    "kakiku/pig2mod/mixin/MxServerChunkCache": {
+      "removeEntity": "Lnet/minecraft/server/level/ServerChunkCache;m_8443_(Lnet/minecraft/world/entity/Entity;)V"
+    },
+    "kakiku/pig2mod/mixin/MxTickingTracker": {
+      "replacePlayerTicketsLevel": "Lnet/minecraft/server/level/TickingTracker;m_184146_(I)V",
+      "getTickets": "Lnet/minecraft/server/level/TickingTracker;m_184177_(J)Lnet/minecraft/util/SortedArraySet;",
+      "removeTicket(JLnet/minecraft/server/level/Ticket;)V": "Lnet/minecraft/server/level/TickingTracker;m_184165_(JLnet/minecraft/server/level/Ticket;)V"
+    },
+    "kakiku/pig2mod/mixin/MxServerEntity": {
+      "broadcastAndSend": "Lnet/minecraft/server/level/ServerEntity;m_8538_(Lnet/minecraft/network/protocol/Packet;)V",
+      "removePairing": "Lnet/minecraft/server/level/ServerEntity;m_8534_(Lnet/minecraft/server/level/ServerPlayer;)V",
+      "addPairing": "Lnet/minecraft/server/level/ServerEntity;m_8541_(Lnet/minecraft/server/level/ServerPlayer;)V",
+      "sendPairingData": "Lnet/minecraft/server/level/ServerEntity;m_289200_(Lnet/minecraft/server/level/ServerPlayer;Ljava/util/function/Consumer;)V"
+    },
+    "kakiku/pig2mod/mixin/MxEntityLookup": {
+      "remove": "Lnet/minecraft/world/level/entity/EntityLookup;m_156822_(Lnet/minecraft/world/level/entity/EntityAccess;)V"
+    },
+    "kakiku/pig2mod/mixin/MxSynchedEntityData": {
+      "set(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;Z)V": "Lnet/minecraft/network/syncher/SynchedEntityData;m_276349_(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;Z)V",
+      "set(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;)V": "Lnet/minecraft/network/syncher/SynchedEntityData;m_135381_(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;)V"
+    },
+    "kakiku/pig2mod/mixin/MxAttributeInstance": {
+      "setBaseValue": "Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;m_22100_(D)V"
+    },
+    "kakiku/pig2mod/mixin/MxPlayer": {
+      "attack": "Lnet/minecraft/world/entity/player/Player;m_5706_(Lnet/minecraft/world/entity/Entity;)V"
+    },
+    "kakiku/pig2mod/mixin/MxResource": {
+      "open": "Lnet/minecraft/server/packs/resources/Resource;m_215507_()Ljava/io/InputStream;"
+    },
+    "kakiku/pig2mod/mixin/MxTransientEntitySectionManager$Callback": {
+      "net.minecraft.world.level.entity.TransientEntitySectionManager$Callback": "net/minecraft/world/level/entity/TransientEntitySectionManager$Callback"
+    },
+    "kakiku/pig2mod/mixin/MxEntitySectionStorage": {
+      "getOrCreateSection": "Lnet/minecraft/world/level/entity/EntitySectionStorage;m_156893_(J)Lnet/minecraft/world/level/entity/EntitySection;",
+      "remove": "Lnet/minecraft/world/level/entity/EntitySectionStorage;m_156897_(J)V"
+    },
+    "kakiku/pig2mod/mixin/MxAttributeMap": {
+      "getInstance(Lnet/minecraft/world/entity/ai/attributes/Attribute;)Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;": "Lnet/minecraft/world/entity/ai/attributes/AttributeMap;m_22146_(Lnet/minecraft/world/entity/ai/attributes/Attribute;)Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;"
+    },
+    "kakiku/pig2mod/mixin/MxEntityTickList": {
+      "remove": "Lnet/minecraft/world/level/entity/EntityTickList;m_156912_(Lnet/minecraft/world/entity/Entity;)V"
+    },
+    "kakiku/pig2mod/mixin/MxLivingEntity": {
+      "dropAllDeathLoot": "Lnet/minecraft/world/entity/LivingEntity;m_6668_(Lnet/minecraft/world/damagesource/DamageSource;)V",
+      "tick": "Lnet/minecraft/world/entity/LivingEntity;m_8119_()V",
+      "getHealth": "Lnet/minecraft/world/entity/LivingEntity;m_21223_()F",
+      "setHealth": "Lnet/minecraft/world/entity/LivingEntity;m_21153_(F)V"
+    },
+    "kakiku/pig2mod/mixin/MxGoalSelector": {
+      "removeAllGoals": "Lnet/minecraft/world/entity/ai/goal/GoalSelector;m_262460_(Ljava/util/function/Predicate;)V",
+      "getAvailableGoals": "Lnet/minecraft/world/entity/ai/goal/GoalSelector;m_148105_()Ljava/util/Set;"
+    },
+    "kakiku/pig2mod/mixin/MxServerBossEvent": {
+      "addPlayer": "Lnet/minecraft/server/level/ServerBossEvent;m_6543_(Lnet/minecraft/server/level/ServerPlayer;)V"
+    },
+    "kakiku/pig2mod/mixin/MxInventory": {
+      "removeItem(Lnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/world/entity/player/Inventory;m_36057_(Lnet/minecraft/world/item/ItemStack;)V"
+    },
+    "kakiku/pig2mod/mixin/MxTransientEntitySectionManager": {
+      "stopTicking": "Lnet/minecraft/world/level/entity/TransientEntitySectionManager;m_157658_(Lnet/minecraft/world/level/ChunkPos;)V"
+    },
+    "kakiku/pig2mod/mixin/MxClientLevel$EntityCallbacks": {
+      "net.minecraft.client.multiplayer.ClientLevel$EntityCallbacks": "net/minecraft/client/multiplayer/ClientLevel$EntityCallbacks"
+    },
+    "kakiku/pig2mod/mixin/MxClientLevel": {
+      "addEntity": "Lnet/minecraft/client/multiplayer/ClientLevel;m_104739_(ILnet/minecraft/world/entity/Entity;)V",
+      "tickNonPassenger": "Lnet/minecraft/client/multiplayer/ClientLevel;m_104639_(Lnet/minecraft/world/entity/Entity;)V",
+      "unload": "Lnet/minecraft/client/multiplayer/ClientLevel;m_104665_(Lnet/minecraft/world/level/chunk/LevelChunk;)V",
+      "removeEntity": "Lnet/minecraft/client/multiplayer/ClientLevel;m_171642_(ILnet/minecraft/world/entity/Entity$RemovalReason;)V",
+      "Lnet/minecraft/world/entity/Entity;tick()V": "Lnet/minecraft/world/entity/Entity;m_8119_()V"
+    },
+    "kakiku/pig2mod/mixin/MxClassInstanceMultiMap": {
+      "remove": "Lnet/minecraft/util/ClassInstanceMultiMap;remove(Ljava/lang/Object;)Z"
+    },
+    "kakiku/pig2mod/mixin/MxGuiGraphics": {
+      "innerBlit(Lnet/minecraft/resources/ResourceLocation;IIIIIFFFFFFFF)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280479_(Lnet/minecraft/resources/ResourceLocation;IIIIIFFFFFFFF)V",
+      "drawCenteredString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;III)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280653_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;III)V",
+      "drawString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I": "Lnet/minecraft/client/gui/GuiGraphics;m_280614_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I",
+      "drawCenteredString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;III)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280364_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;III)V",
+      "blit(Lnet/minecraft/resources/ResourceLocation;IIFFIIII)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280163_(Lnet/minecraft/resources/ResourceLocation;IIFFIIII)V",
+      "drawCenteredString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280137_(Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V",
+      "innerBlit(Lnet/minecraft/resources/ResourceLocation;IIIIIFFFF)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280444_(Lnet/minecraft/resources/ResourceLocation;IIIIIFFFF)V"
+    },
+    "kakiku/pig2mod/mixin/MxDistanceManager": {
+      "updateChunkForced": "Lnet/minecraft/server/level/DistanceManager;m_140799_(Lnet/minecraft/world/level/ChunkPos;Z)V",
+      "getTickets": "Lnet/minecraft/server/level/DistanceManager;m_140857_(J)Lnet/minecraft/util/SortedArraySet;",
+      "removeTicket(JLnet/minecraft/server/level/Ticket;)V": "Lnet/minecraft/server/level/DistanceManager;m_140818_(JLnet/minecraft/server/level/Ticket;)V",
+      "updateSimulationDistance": "Lnet/minecraft/server/level/DistanceManager;m_183911_(I)V",
+      "removeTicketsOnClosing": "Lnet/minecraft/server/level/DistanceManager;m_201910_()V",
+      "removePlayer": "Lnet/minecraft/server/level/DistanceManager;m_140828_(Lnet/minecraft/core/SectionPos;Lnet/minecraft/server/level/ServerPlayer;)V"
+    },
+    "kakiku/pig2mod/mixin/MxItemStack": {
+      "use": "Lnet/minecraft/world/item/ItemStack;m_41682_(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;"
+    },
+    "kakiku/pig2mod/mixin/MxConnection": {
+      "send(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V": "Lnet/minecraft/network/Connection;m_243124_(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V"
+    },
+    "kakiku/pig2mod/mixin/MxLivingEntityRenderer": {
+      "getOverlayCoords": "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;m_115338_(Lnet/minecraft/world/entity/LivingEntity;F)I"
+    },
+    "kakiku/pig2mod/mixin/MxEntitySection": {
+      "updateChunkStatus": "Lnet/minecraft/world/level/entity/EntitySection;m_156838_(Lnet/minecraft/world/level/entity/Visibility;)Lnet/minecraft/world/level/entity/Visibility;",
+      "remove": "Lnet/minecraft/world/level/entity/EntitySection;m_188355_(Lnet/minecraft/world/level/entity/EntityAccess;)Z"
+    },
+    "kakiku/pig2mod/mixin/MxEntity": {
+      "discard": "Lnet/minecraft/world/entity/Entity;m_146870_()V",
+      "isRemoved": "Lnet/minecraft/world/entity/Entity;m_213877_()Z",
+      "save": "Lnet/minecraft/world/entity/Entity;m_20223_(Lnet/minecraft/nbt/CompoundTag;)Z",
+      "setLevelCallback": "Lnet/minecraft/world/entity/Entity;m_141960_(Lnet/minecraft/world/level/entity/EntityInLevelCallback;)V",
+      "setPos(DDD)V": "Lnet/minecraft/world/entity/Entity;m_6034_(DDD)V",
+      "setRemoved": "Lnet/minecraft/world/entity/Entity;m_142467_(Lnet/minecraft/world/entity/Entity$RemovalReason;)V",
+      "isShiftKeyDown": "Lnet/minecraft/world/entity/Entity;m_6144_()Z"
+    },
+    "kakiku/pig2mod/mixin/MxServerLevel$EntityCallbacks": {
+      "net.minecraft.server.level.ServerLevel$EntityCallbacks": "net/minecraft/server/level/ServerLevel$EntityCallbacks"
+    },
+    "kakiku/pig2mod/mixin/MxChunkMap": {
+      "broadcast": "Lnet/minecraft/server/level/ChunkMap;m_140201_(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/network/protocol/Packet;)V",
+      "broadcastAndSend": "Lnet/minecraft/server/level/ChunkMap;m_140333_(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/network/protocol/Packet;)V",
+      "protoChunkToFullChunk": "Lnet/minecraft/server/level/ChunkMap;m_140383_(Lnet/minecraft/server/level/ChunkHolder;)Ljava/util/concurrent/CompletableFuture;",
+      "updateChunkScheduling": "Lnet/minecraft/server/level/ChunkMap;m_140176_(JILnet/minecraft/server/level/ChunkHolder;I)Lnet/minecraft/server/level/ChunkHolder;",
+      "scheduleUnload": "Lnet/minecraft/server/level/ChunkMap;m_140181_(JLnet/minecraft/server/level/ChunkHolder;)V",
+      "setViewDistance": "Lnet/minecraft/server/level/ChunkMap;m_140167_(I)V",
+      "removeEntity": "Lnet/minecraft/server/level/ChunkMap;m_140331_(Lnet/minecraft/world/entity/Entity;)V",
+      "prepareEntityTickingChunk": "Lnet/minecraft/server/level/ChunkMap;m_280208_(Lnet/minecraft/server/level/ChunkHolder;)Ljava/util/concurrent/CompletableFuture;"
+    },
+    "kakiku/pig2mod/mixin/MxServerFunctionManager": {
+      "execute(Lnet/minecraft/commands/CommandFunction;Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/ServerFunctionManager$TraceCallbacks;)I": "Lnet/minecraft/server/ServerFunctionManager;m_179960_(Lnet/minecraft/commands/CommandFunction;Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/ServerFunctionManager$TraceCallbacks;)I"
+    },
+    "kakiku/pig2mod/mixin/MxAccessorTrackedEntity": {
+      "net.minecraft.server.level.ChunkMap$TrackedEntity": "net/minecraft/server/level/ChunkMap$TrackedEntity",
+      "seenBy": "f_140475_:Ljava/util/Set;",
+      "entity": "f_140472_:Lnet/minecraft/world/entity/Entity;"
+    },
+    "kakiku/pig2mod/mixin/MxMouseHandler": {
+      "grabMouse": "Lnet/minecraft/client/MouseHandler;m_91601_()V"
+    },
+    "kakiku/pig2mod/mixin/MxChunkHolder": {
+      "setTicketLevel": "Lnet/minecraft/server/level/ChunkHolder;m_140027_(I)V"
+    },
+    "kakiku/pig2mod/mixin/MxClientPacketListener": {
+      "handleTeleportEntity": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_6435_(Lnet/minecraft/network/protocol/game/ClientboundTeleportEntityPacket;)V",
+      "handleRemoveEntities": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_182047_(Lnet/minecraft/network/protocol/game/ClientboundRemoveEntitiesPacket;)V",
+      "handleMoveEntity": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_7865_(Lnet/minecraft/network/protocol/game/ClientboundMoveEntityPacket;)V"
+    },
+    "kakiku/pig2mod/mixin/MxBrain": {
+      "clearMemories": "Lnet/minecraft/world/entity/ai/Brain;m_276084_()V"
+    },
+    "kakiku/pig2mod/mixin/MxTicket": {
+      "setCreatedTick": "Lnet/minecraft/server/level/Ticket;m_9429_(J)V"
+    }
+  },
+  "data": {
+    "searge": {
+      "kakiku/pig2mod/mixin/MxChunkMap$TrackedEntity": {
+        "net.minecraft.server.level.ChunkMap$TrackedEntity": "net/minecraft/server/level/ChunkMap$TrackedEntity"
+      },
+      "kakiku/pig2mod/mixin/MxMinecraftServer": {
+        "stopServer": "Lnet/minecraft/server/MinecraftServer;m_7041_()V",
+        "createLevels": "Lnet/minecraft/server/MinecraftServer;m_129815_(Lnet/minecraft/server/level/progress/ChunkProgressListener;)V"
+      },
+      "kakiku/pig2mod/mixin/MxPersistentEntitySectionManager": {
+        "stopTracking": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157580_(Lnet/minecraft/world/level/entity/EntityAccess;)V",
+        "stopTicking": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157570_(Lnet/minecraft/world/level/entity/EntityAccess;)V",
+        "unloadEntity": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157585_(Lnet/minecraft/world/level/entity/EntityAccess;)V",
+        "processChunkUnload": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157568_(J)Z",
+        "updateChunkStatus(Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/level/entity/Visibility;)V": "Lnet/minecraft/world/level/entity/PersistentEntitySectionManager;m_157527_(Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/level/entity/Visibility;)V"
+      },
+      "kakiku/pig2mod/mixin/MxServerLevel": {
+        "addEntity": "Lnet/minecraft/server/level/ServerLevel;m_8872_(Lnet/minecraft/world/entity/Entity;)Z",
+        "tickNonPassenger": "Lnet/minecraft/server/level/ServerLevel;m_8647_(Lnet/minecraft/world/entity/Entity;)V",
+        "broadcastEntityEvent": "Lnet/minecraft/server/level/ServerLevel;m_7605_(Lnet/minecraft/world/entity/Entity;B)V",
+        "tick": "Lnet/minecraft/server/level/ServerLevel;m_8793_(Ljava/util/function/BooleanSupplier;)V",
+        "setChunkForced": "Lnet/minecraft/server/level/ServerLevel;m_8602_(IIZ)Z",
+        "Lnet/minecraft/world/entity/Entity;tick()V": "Lnet/minecraft/world/entity/Entity;m_8119_()V"
+      },
+      "kakiku/pig2mod/mixin/MxPersistentEntitySectionManager$Callback": {
+        "net.minecraft.world.level.entity.PersistentEntitySectionManager$Callback": "net/minecraft/world/level/entity/PersistentEntitySectionManager$Callback"
+      },
+      "kakiku/pig2mod/mixin/MxServerChunkCache": {
+        "removeEntity": "Lnet/minecraft/server/level/ServerChunkCache;m_8443_(Lnet/minecraft/world/entity/Entity;)V"
+      },
+      "kakiku/pig2mod/mixin/MxTickingTracker": {
+        "replacePlayerTicketsLevel": "Lnet/minecraft/server/level/TickingTracker;m_184146_(I)V",
+        "getTickets": "Lnet/minecraft/server/level/TickingTracker;m_184177_(J)Lnet/minecraft/util/SortedArraySet;",
+        "removeTicket(JLnet/minecraft/server/level/Ticket;)V": "Lnet/minecraft/server/level/TickingTracker;m_184165_(JLnet/minecraft/server/level/Ticket;)V"
+      },
+      "kakiku/pig2mod/mixin/MxServerEntity": {
+        "broadcastAndSend": "Lnet/minecraft/server/level/ServerEntity;m_8538_(Lnet/minecraft/network/protocol/Packet;)V",
+        "removePairing": "Lnet/minecraft/server/level/ServerEntity;m_8534_(Lnet/minecraft/server/level/ServerPlayer;)V",
+        "addPairing": "Lnet/minecraft/server/level/ServerEntity;m_8541_(Lnet/minecraft/server/level/ServerPlayer;)V",
+        "sendPairingData": "Lnet/minecraft/server/level/ServerEntity;m_289200_(Lnet/minecraft/server/level/ServerPlayer;Ljava/util/function/Consumer;)V"
+      },
+      "kakiku/pig2mod/mixin/MxEntityLookup": {
+        "remove": "Lnet/minecraft/world/level/entity/EntityLookup;m_156822_(Lnet/minecraft/world/level/entity/EntityAccess;)V"
+      },
+      "kakiku/pig2mod/mixin/MxSynchedEntityData": {
+        "set(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;Z)V": "Lnet/minecraft/network/syncher/SynchedEntityData;m_276349_(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;Z)V",
+        "set(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;)V": "Lnet/minecraft/network/syncher/SynchedEntityData;m_135381_(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;)V"
+      },
+      "kakiku/pig2mod/mixin/MxAttributeInstance": {
+        "setBaseValue": "Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;m_22100_(D)V"
+      },
+      "kakiku/pig2mod/mixin/MxPlayer": {
+        "attack": "Lnet/minecraft/world/entity/player/Player;m_5706_(Lnet/minecraft/world/entity/Entity;)V"
+      },
+      "kakiku/pig2mod/mixin/MxResource": {
+        "open": "Lnet/minecraft/server/packs/resources/Resource;m_215507_()Ljava/io/InputStream;"
+      },
+      "kakiku/pig2mod/mixin/MxTransientEntitySectionManager$Callback": {
+        "net.minecraft.world.level.entity.TransientEntitySectionManager$Callback": "net/minecraft/world/level/entity/TransientEntitySectionManager$Callback"
+      },
+      "kakiku/pig2mod/mixin/MxEntitySectionStorage": {
+        "getOrCreateSection": "Lnet/minecraft/world/level/entity/EntitySectionStorage;m_156893_(J)Lnet/minecraft/world/level/entity/EntitySection;",
+        "remove": "Lnet/minecraft/world/level/entity/EntitySectionStorage;m_156897_(J)V"
+      },
+      "kakiku/pig2mod/mixin/MxAttributeMap": {
+        "getInstance(Lnet/minecraft/world/entity/ai/attributes/Attribute;)Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;": "Lnet/minecraft/world/entity/ai/attributes/AttributeMap;m_22146_(Lnet/minecraft/world/entity/ai/attributes/Attribute;)Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;"
+      },
+      "kakiku/pig2mod/mixin/MxEntityTickList": {
+        "remove": "Lnet/minecraft/world/level/entity/EntityTickList;m_156912_(Lnet/minecraft/world/entity/Entity;)V"
+      },
+      "kakiku/pig2mod/mixin/MxLivingEntity": {
+        "dropAllDeathLoot": "Lnet/minecraft/world/entity/LivingEntity;m_6668_(Lnet/minecraft/world/damagesource/DamageSource;)V",
+        "tick": "Lnet/minecraft/world/entity/LivingEntity;m_8119_()V",
+        "getHealth": "Lnet/minecraft/world/entity/LivingEntity;m_21223_()F",
+        "setHealth": "Lnet/minecraft/world/entity/LivingEntity;m_21153_(F)V"
+      },
+      "kakiku/pig2mod/mixin/MxGoalSelector": {
+        "removeAllGoals": "Lnet/minecraft/world/entity/ai/goal/GoalSelector;m_262460_(Ljava/util/function/Predicate;)V",
+        "getAvailableGoals": "Lnet/minecraft/world/entity/ai/goal/GoalSelector;m_148105_()Ljava/util/Set;"
+      },
+      "kakiku/pig2mod/mixin/MxServerBossEvent": {
+        "addPlayer": "Lnet/minecraft/server/level/ServerBossEvent;m_6543_(Lnet/minecraft/server/level/ServerPlayer;)V"
+      },
+      "kakiku/pig2mod/mixin/MxInventory": {
+        "removeItem(Lnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/world/entity/player/Inventory;m_36057_(Lnet/minecraft/world/item/ItemStack;)V"
+      },
+      "kakiku/pig2mod/mixin/MxTransientEntitySectionManager": {
+        "stopTicking": "Lnet/minecraft/world/level/entity/TransientEntitySectionManager;m_157658_(Lnet/minecraft/world/level/ChunkPos;)V"
+      },
+      "kakiku/pig2mod/mixin/MxClientLevel$EntityCallbacks": {
+        "net.minecraft.client.multiplayer.ClientLevel$EntityCallbacks": "net/minecraft/client/multiplayer/ClientLevel$EntityCallbacks"
+      },
+      "kakiku/pig2mod/mixin/MxClientLevel": {
+        "addEntity": "Lnet/minecraft/client/multiplayer/ClientLevel;m_104739_(ILnet/minecraft/world/entity/Entity;)V",
+        "tickNonPassenger": "Lnet/minecraft/client/multiplayer/ClientLevel;m_104639_(Lnet/minecraft/world/entity/Entity;)V",
+        "unload": "Lnet/minecraft/client/multiplayer/ClientLevel;m_104665_(Lnet/minecraft/world/level/chunk/LevelChunk;)V",
+        "removeEntity": "Lnet/minecraft/client/multiplayer/ClientLevel;m_171642_(ILnet/minecraft/world/entity/Entity$RemovalReason;)V",
+        "Lnet/minecraft/world/entity/Entity;tick()V": "Lnet/minecraft/world/entity/Entity;m_8119_()V"
+      },
+      "kakiku/pig2mod/mixin/MxClassInstanceMultiMap": {
+        "remove": "Lnet/minecraft/util/ClassInstanceMultiMap;remove(Ljava/lang/Object;)Z"
+      },
+      "kakiku/pig2mod/mixin/MxGuiGraphics": {
+        "innerBlit(Lnet/minecraft/resources/ResourceLocation;IIIIIFFFFFFFF)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280479_(Lnet/minecraft/resources/ResourceLocation;IIIIIFFFFFFFF)V",
+        "drawCenteredString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;III)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280653_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;III)V",
+        "drawString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I": "Lnet/minecraft/client/gui/GuiGraphics;m_280614_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I",
+        "drawCenteredString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;III)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280364_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;III)V",
+        "blit(Lnet/minecraft/resources/ResourceLocation;IIFFIIII)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280163_(Lnet/minecraft/resources/ResourceLocation;IIFFIIII)V",
+        "drawCenteredString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280137_(Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V",
+        "innerBlit(Lnet/minecraft/resources/ResourceLocation;IIIIIFFFF)V": "Lnet/minecraft/client/gui/GuiGraphics;m_280444_(Lnet/minecraft/resources/ResourceLocation;IIIIIFFFF)V"
+      },
+      "kakiku/pig2mod/mixin/MxDistanceManager": {
+        "updateChunkForced": "Lnet/minecraft/server/level/DistanceManager;m_140799_(Lnet/minecraft/world/level/ChunkPos;Z)V",
+        "getTickets": "Lnet/minecraft/server/level/DistanceManager;m_140857_(J)Lnet/minecraft/util/SortedArraySet;",
+        "removeTicket(JLnet/minecraft/server/level/Ticket;)V": "Lnet/minecraft/server/level/DistanceManager;m_140818_(JLnet/minecraft/server/level/Ticket;)V",
+        "updateSimulationDistance": "Lnet/minecraft/server/level/DistanceManager;m_183911_(I)V",
+        "removeTicketsOnClosing": "Lnet/minecraft/server/level/DistanceManager;m_201910_()V",
+        "removePlayer": "Lnet/minecraft/server/level/DistanceManager;m_140828_(Lnet/minecraft/core/SectionPos;Lnet/minecraft/server/level/ServerPlayer;)V"
+      },
+      "kakiku/pig2mod/mixin/MxItemStack": {
+        "use": "Lnet/minecraft/world/item/ItemStack;m_41682_(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;"
+      },
+      "kakiku/pig2mod/mixin/MxConnection": {
+        "send(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V": "Lnet/minecraft/network/Connection;m_243124_(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V"
+      },
+      "kakiku/pig2mod/mixin/MxLivingEntityRenderer": {
+        "getOverlayCoords": "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;m_115338_(Lnet/minecraft/world/entity/LivingEntity;F)I"
+      },
+      "kakiku/pig2mod/mixin/MxEntitySection": {
+        "updateChunkStatus": "Lnet/minecraft/world/level/entity/EntitySection;m_156838_(Lnet/minecraft/world/level/entity/Visibility;)Lnet/minecraft/world/level/entity/Visibility;",
+        "remove": "Lnet/minecraft/world/level/entity/EntitySection;m_188355_(Lnet/minecraft/world/level/entity/EntityAccess;)Z"
+      },
+      "kakiku/pig2mod/mixin/MxEntity": {
+        "discard": "Lnet/minecraft/world/entity/Entity;m_146870_()V",
+        "isRemoved": "Lnet/minecraft/world/entity/Entity;m_213877_()Z",
+        "save": "Lnet/minecraft/world/entity/Entity;m_20223_(Lnet/minecraft/nbt/CompoundTag;)Z",
+        "setLevelCallback": "Lnet/minecraft/world/entity/Entity;m_141960_(Lnet/minecraft/world/level/entity/EntityInLevelCallback;)V",
+        "setPos(DDD)V": "Lnet/minecraft/world/entity/Entity;m_6034_(DDD)V",
+        "setRemoved": "Lnet/minecraft/world/entity/Entity;m_142467_(Lnet/minecraft/world/entity/Entity$RemovalReason;)V",
+        "isShiftKeyDown": "Lnet/minecraft/world/entity/Entity;m_6144_()Z"
+      },
+      "kakiku/pig2mod/mixin/MxServerLevel$EntityCallbacks": {
+        "net.minecraft.server.level.ServerLevel$EntityCallbacks": "net/minecraft/server/level/ServerLevel$EntityCallbacks"
+      },
+      "kakiku/pig2mod/mixin/MxChunkMap": {
+        "broadcast": "Lnet/minecraft/server/level/ChunkMap;m_140201_(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/network/protocol/Packet;)V",
+        "broadcastAndSend": "Lnet/minecraft/server/level/ChunkMap;m_140333_(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/network/protocol/Packet;)V",
+        "protoChunkToFullChunk": "Lnet/minecraft/server/level/ChunkMap;m_140383_(Lnet/minecraft/server/level/ChunkHolder;)Ljava/util/concurrent/CompletableFuture;",
+        "updateChunkScheduling": "Lnet/minecraft/server/level/ChunkMap;m_140176_(JILnet/minecraft/server/level/ChunkHolder;I)Lnet/minecraft/server/level/ChunkHolder;",
+        "scheduleUnload": "Lnet/minecraft/server/level/ChunkMap;m_140181_(JLnet/minecraft/server/level/ChunkHolder;)V",
+        "setViewDistance": "Lnet/minecraft/server/level/ChunkMap;m_140167_(I)V",
+        "removeEntity": "Lnet/minecraft/server/level/ChunkMap;m_140331_(Lnet/minecraft/world/entity/Entity;)V",
+        "prepareEntityTickingChunk": "Lnet/minecraft/server/level/ChunkMap;m_280208_(Lnet/minecraft/server/level/ChunkHolder;)Ljava/util/concurrent/CompletableFuture;"
+      },
+      "kakiku/pig2mod/mixin/MxServerFunctionManager": {
+        "execute(Lnet/minecraft/commands/CommandFunction;Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/ServerFunctionManager$TraceCallbacks;)I": "Lnet/minecraft/server/ServerFunctionManager;m_179960_(Lnet/minecraft/commands/CommandFunction;Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/server/ServerFunctionManager$TraceCallbacks;)I"
+      },
+      "kakiku/pig2mod/mixin/MxAccessorTrackedEntity": {
+        "net.minecraft.server.level.ChunkMap$TrackedEntity": "net/minecraft/server/level/ChunkMap$TrackedEntity",
+        "seenBy": "f_140475_:Ljava/util/Set;",
+        "entity": "f_140472_:Lnet/minecraft/world/entity/Entity;"
+      },
+      "kakiku/pig2mod/mixin/MxMouseHandler": {
+        "grabMouse": "Lnet/minecraft/client/MouseHandler;m_91601_()V"
+      },
+      "kakiku/pig2mod/mixin/MxChunkHolder": {
+        "setTicketLevel": "Lnet/minecraft/server/level/ChunkHolder;m_140027_(I)V"
+      },
+      "kakiku/pig2mod/mixin/MxClientPacketListener": {
+        "handleTeleportEntity": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_6435_(Lnet/minecraft/network/protocol/game/ClientboundTeleportEntityPacket;)V",
+        "handleRemoveEntities": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_182047_(Lnet/minecraft/network/protocol/game/ClientboundRemoveEntitiesPacket;)V",
+        "handleMoveEntity": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_7865_(Lnet/minecraft/network/protocol/game/ClientboundMoveEntityPacket;)V"
+      },
+      "kakiku/pig2mod/mixin/MxBrain": {
+        "clearMemories": "Lnet/minecraft/world/entity/ai/Brain;m_276084_()V"
+      },
+      "kakiku/pig2mod/mixin/MxTicket": {
+        "setCreatedTick": "Lnet/minecraft/server/level/Ticket;m_9429_(J)V"
+      }
+    }
+  }
+}
